@@ -20,6 +20,7 @@ public class NewActivity extends AppCompatActivity {
         ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+
         ivLogo = (ImageView)findViewById(R.id.imageViewLogo);
         String imageurl = "https://upload.wikimedia.org/wikipedia/commons/8/80/Republic_Polytechnic_Logo.jpg";
 

@@ -67,6 +67,7 @@ public class AnniversaryFragment extends Fragment {
                             }
                         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+
                     }
                 });
                 AlertDialog alertDialog = builder.create();

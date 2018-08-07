@@ -59,39 +59,30 @@ public class MainActivity extends AppCompatActivity {
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                Fragment fragment = null;
-                if (position == 0){ fragment = new BioFragment();
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction trans = fm.beginTransaction();
-                    trans.replace(R.id.content_frame, fragment);
-                    trans.commit();}
 
-                else if (position == 1){ fragment = new VaccinationFragment();
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction trans = fm.beginTransaction();
-                    trans.replace(R.id.content_frame, fragment);
-                    trans.commit();}
-
-                else if (position == 2){ fragment = new AnniversaryFragment();
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction trans = fm.beginTransaction();
-                    trans.replace(R.id.content_frame, fragment);
-                    trans.commit();}
-
-                else if (position == 3){
+                //Method2
+                if (position == 3) {
                     Intent intent = new Intent(MainActivity.this,NewActivity.class);
                     startActivity(intent);
+                    return;
+                }else {
+                    Fragment fragment = null;
+                    if (position == 0) fragment = new BioFragment();
+                    else if (position == 1) fragment = new VaccinationFragment();
+                    else if (position == 2) fragment = new AnniversaryFragment();
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction trans = fm.beginTransaction();
+                    trans.replace(R.id.content_frame, fragment);
+                    trans.commit();
+                    // Highlight the selected item,
+                    //  update the title, and close the drawer
+                    drawerList.setItemChecked(position, true);
+                    currentTitle = al.get(position).getTitle();
+                    ab.setTitle(currentTitle);
+                    drawerLayout.closeDrawer(drawerList);
                 }
 
 
-
-
-                // Highlight the selected item,
-                //  update the title, and close the drawer
-                drawerList.setItemChecked(position, true);
-                currentTitle = al.get(position).getTitle();
-                ab.setTitle(currentTitle);
-                drawerLayout.closeDrawer(drawerList);
             }
         });
 
