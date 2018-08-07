@@ -22,13 +22,11 @@ public class NewActivity extends AppCompatActivity {
 
         ivLogo = (ImageView)findViewById(R.id.imageViewLogo);
         String imageurl = "https://upload.wikimedia.org/wikipedia/commons/8/80/Republic_Polytechnic_Logo.jpg";
-        Picasso.with(this).load(imageurl).into(ivLogo);
 
-        Picasso.with(this).load(imageurl)
+        Picasso.get().load(imageurl)
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .into(ivLogo);
-
 
     }
 }

@@ -15,7 +15,8 @@
         android:layout_weight="1"
         android:padding="10dp"
         android:text="Created by : Ah Chong, Peter, Mary"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -31,5 +32,6 @@
         android:layout_weight="1"
         android:padding="10dp"
         android:text="C347 - Android Programming II Republic Polytechnic"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>
